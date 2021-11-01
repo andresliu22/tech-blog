@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Andres Post",
+        "content": "I'm happy",
+        "user_id": 1
+    },
+    {
+        "title": "Alonzo Post",
+        "content": "I'm sad",
+        "user_id": 2
+    },
+    {
+        "title": "Matt Post",
+        "content": "I'm angry",
+        "user_id": 3
+    }
+]
