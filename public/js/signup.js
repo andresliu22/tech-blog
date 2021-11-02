@@ -16,7 +16,7 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        alert("Fill out all the blanks and use an existing email. \nPassword must contain at least 1 number and must be more than 8 characters.");
       }
     }
 };
