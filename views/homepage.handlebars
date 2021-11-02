@@ -1,15 +1,54 @@
-{{#each posts as |post|}}
+{{!-- {{#each posts as |post|}}
 <div class="row mb-4 post">
-  <div class="col-md-5">
-    <h2>
-        <a href="/post/{{id}}">{{post.title}}</a>
-    </h2>
+  <div class="col col-md-12">
+    <h4>{{post.title}}</h4>
+    <p>{{post.content}}</p>
     <p>Created by {{post.user.first_name}} {{post.user.last_name}} on {{format_date post.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{post.content}}
-    </p>
+    <a href="#">See comments</a>
+    |
+    <a href="#">Add comment</a>
+
+    <div class="container">
+      {{#each post.comments as |comment| }}
+        <div class="row" style="border-style:solid; border-color:black; border-width: 1px;">
+          <p>{{comment.content}}</p>
+          <p>{{comment.user.id}} - {{format_date comment.date_created}}</p>
+        </div>
+      {{/each}}
+    </div>
   </div>
 </div>
-{{/each}}
+{{/each}} --}}
+
+<div id="accordion">
+  {{#each posts as |post|}}
+  <div class="card">
+    <div class="card-header" id="heading{{post.id}}">
+      <h5 class="mb-0">
+        <a href="/post/{{post.id}}/comment" style="width: 100%; text-align: left;" class="btn btn-link">
+          <div class="col-md-12">
+            <h4>{{post.title}}</h4>
+            <p>{{post.content}}</p>
+            <p style="font-size: 14px;">Created by {{post.user.first_name}} {{post.user.last_name}} on {{format_date post.date_created}}</p>
+          </div>
+        </a>
+      </h5>
+    </div>
+    {{!-- <div id="collapse{{post.id}}" class="collapse" aria-labelledby="heading{{post.id}}" data-parent="#accordion">
+      <div class="card-body">
+        <ul class="list-group">
+          {{#each post.comments as |comment| }}
+          <li class="list-group-item">
+            <h6>{{comment.title}}</h6>
+            <p style="font-size: 14px;">Created by {{comment.user.first_name}} {{comment.user.last_name}} on {{format_date comment.date_created}}</p>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="card-footer">
+        <a href="#">Add comment</a>
+      </div>
+    </div> --}}
+  </div>
+  {{/each}}
+</div>

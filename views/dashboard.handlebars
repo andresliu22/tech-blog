@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome</h2>
+    <h2>Welcome, {{user.first_name}}!</h2>
   </div>
 </div>
 
@@ -23,17 +23,17 @@
     </form>
   </div>
 
-  {{#if posts.length}}
+  {{#if user.posts.length}}
   <div class="col-md-6 post-list">
     <h3>Current posts:</h3>
 
-    {{#each posts as |post|}}
+    {{#each user.posts}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        <h4><a href="/post/{{id}}">{{title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
@@ -41,4 +41,4 @@
   {{/if}}
 </div>
 
-<script src="./js/post.js"></script>
+<script src="./js/dashboard.js"></script>
