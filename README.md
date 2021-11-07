@@ -49,9 +49,9 @@ These instructions will get you a copy of the project up and running on your loc
 * [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [Express-Session](https://www.npmjs.com/package/express-session)
 
-## Link of Repository
+## Deployed Link
 
-* [See Repository](https://github.com/andresliu22/tech-blog)
+* [See Deployed App](https://andresliu-tech-blog.herokuapp.com/)
 
 ## Authors
 
